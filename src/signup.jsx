@@ -1,34 +1,65 @@
 import { SignUp } from '@clerk/clerk-react'
-import { useRef,useEffect } from 'react'
+import { useRef, useEffect } from 'react'
 import logo from "/logo.png"
 import gsap from 'gsap'
 
 export default function Signup() {
   const logoRef = useRef(null);
 
- useEffect(() => {
+  useEffect(() => {
     gsap.to(logoRef.current, {
-      // rotation: 10,
-      scale: 1.2,          
+      scale: 1.2,
       duration: 2,
-      repeat: -1,          // infinite loop
-      yoyo: true,          // smoothly go back to original size
-      ease: "linear"
+      repeat: -1,
+      yoyo: true,
+      ease: "linear",
     });
   }, []);
+
   return (
-    <div className='flex flex-col items-center justify-center h-screen gap-4'>
-        <img ref={logoRef} className='w-20 h-20 rounded-full border-2 border-blue-400' src={logo}/>
-       
-       <div className="w-[400px]">  {/* control width here */}
-        <SignUp
-          appearance={{
-            elements: {
-              rootBox: "w-full", // makes it take full width of parent div
-              card: "w-full",    // ensures the card expands
-            },
-          }}
-        />
+    <div className="min-h-screen flex items-center justify-center ">
+      <div className="flex flex-col items-center bg-white rounded-3xl shadow-lg p-10 w-full max-w-[800px] mx-4">
+        
+        {/* Animated Logo */}
+        <div className="flex flex-col items-center mb-6">
+          <img
+            ref={logoRef}
+            src={logo}
+            alt="SkillSync Logo"
+            className="w-20 h-20 rounded-full border-2 border-blue-400 mb-3"
+          />
+          <h1 className="text-2xl font-semibold text-gray-700">Join SkillSync</h1>
+          <p className="text-gray-500 text-center max-w-sm">
+            Create your account and connect with peers learning the same skills.
+          </p>
+        </div>
+
+        {/* Clerk Sign Up */}
+        <div className="w-full flex justify-center">
+          <div className="w-full flex justify-center sm:w-[450px]">
+            <SignUp
+              appearance={{
+                elements: {
+                  formButtonPrimary: "bg-blue-600 hover:bg-blue-700 text-white",
+                  formFieldLabel: "text-gray-700",
+                  formFieldInput: "rounded-md border-gray-300 focus:border-blue-500 focus:ring-blue-500",
+                  footerActionLink: "text-blue-600 hover:underline",
+                  headerTitle: "text-gray-800 text-lg font-semibold",
+                },
+                variables: {
+                  colorPrimary: "#2563eb",
+                  colorText: "#1e293b",
+                },
+              }}
+              signUpFallbackRedirectUrl="/stepper"
+              signUpForceRedirectUrl="/stepper"
+              signInUrl="/stepper"
+              path="/signup"
+              routing="path"
+            />
+          </div>
+        </div>
+
       </div>
     </div>
   )

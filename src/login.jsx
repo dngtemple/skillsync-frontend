@@ -51,8 +51,8 @@ export default function Login() {
                   colorText: "#1e293b",
                 },
               }}
-              signInFallbackRedirectUrl="/dashboard"   // where to go after login
-              signInForceRedirectUrl="/dashboard"
+              signInFallbackRedirectUrl="/"   // where to go after login
+              signInForceRedirectUrl="/"
               signUpUrl="/signup"
               path="/login"
               routing="path"

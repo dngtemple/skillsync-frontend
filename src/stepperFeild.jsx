@@ -32,7 +32,7 @@ export default function SkillSyncStepper() {
     });
   }, []);
 
-  if (!user) return <div className="flex justify-center items-center h-screen"><ClipLoader  color="#3498db" size={50} /></div>;
+  // if (!user) return <div className="flex justify-center items-center h-screen"><ClipLoader  color="#3498db" size={50} /></div>;
 
   const handleNext = () => setStep((s) => Math.min(s + 1, 5));
   const handleBack = () => setStep((s) => Math.max(s - 1, 1));
@@ -42,28 +42,30 @@ export default function SkillSyncStepper() {
   };
 
   const courseOptions = [
-    "React",
+    "HTML",
     "Node.js",
     "Python",
     "UI/UX",
     "Flutter",
-    "Cybersecurity",
+    "JavaScript",
     "React",
-    "Node.js",
-    "Python",
-    "UI/UX",
-    "Flutter",
+    "C",
+    "Next.js",
+    "C++",
+    "Swift",
     "Cybersecurity",
-    "React",
-    "Node.js",
-    "Python",
-    "UI/UX",
-    "Flutter",
-    "Cybersecurity",
+    "CSS",
+    "Vue.js",
+    "Ruby",
+    "C#",
+    "Java",
+    "TypeScript",
+    "MySql",
+    "Angular",
   ];
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-indigo-50 via-white to-blue-50 p-6">
+    <div className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-indigo-100 via-white to-blue-100 p-6">
       {/* Logo */}
       <div className="flex items-center mb-6 space-x-3">
         <img
@@ -210,21 +212,38 @@ export default function SkillSyncStepper() {
             <h3 className="text-lg font-semibold text-indigo-600 mb-2">
               Review your details
             </h3>
-            <p>
-              <strong>Name:</strong> {formData.fullName}
-            </p>
-            <p>
-              <strong>Username:</strong> {formData.username}
-            </p>
-            <p>
-              <strong>Goal:</strong> {formData.goals}
-            </p>
-            <p>
-              <strong>Courses:</strong> {formData.courses.join(", ")}
-            </p>
-            <p>
-              <strong>Preference:</strong> {formData.preferences}
-            </p>
+
+            <div>
+  <div class="px-4 sm:px-0">
+  </div>
+  <div class="mt-6 border-t border-base-content/25">
+    <dl class="divide-y divide-base-content/25">
+      <div class="px-2 py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0 text-base">
+        <dt class="font-medium text-base-content">Full Name</dt>
+        <dd class="mt-1  text-base-content/80 sm:col-span-2 sm:mt-0">{formData.fullName}</dd>
+      </div>
+      <div class="px-2 py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0 text-base">
+        <dt class="font-medium text-base-content">Username</dt>
+        <dd class="mt-1  text-base-content/80 sm:col-span-2 sm:mt-0">{formData.username}</dd>
+      </div>
+      <div class="px-2 py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0 text-base">
+        <dt class="font-medium text-base-content">Goals</dt>
+        <dd class="mt-1 py-1 px-1 text-base-content/80 sm:col-span-2 sm:mt-0 whitespace-pre-wrap break-words max-h-40 overflow-y-auto  ">{formData.goals}</dd>
+      </div>
+      <div class="px-2 py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0 text-base">
+        <dt class="font-medium text-base-content">Courses</dt>
+        <dd class="mt-1  text-base-content/80 sm:col-span-2 sm:mt-0">{formData.courses.join(" , ")}</dd>
+      </div>
+      <div class="px-2 py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0 text-base">
+        <dt class="font-medium text-base-content">Peference</dt>
+        <dd class="mt-1  text-base-content/80 sm:col-span-2 sm:mt-0">{formData.preferences}</dd>
+      </div>
+      
+    </dl>
+  </div>
+</div>
+
+
           </div>
         )}
 
@@ -251,7 +270,7 @@ export default function SkillSyncStepper() {
           ) : (
             <button
               onClick={handleFinish}
-              className="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-green-700 shadow-sm"
+              className="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 shadow-sm"
             >
               Finish
             </button>

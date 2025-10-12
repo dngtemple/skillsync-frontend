@@ -5,6 +5,7 @@ import Login from './login'
 import Signup from './signup'
 import Dashboard from './dashboard'
 import StepperFeild from './stepperFeild'
+import Notfound from './404'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
           <Route path="/stepper" element={<StepperFeild/>}></Route>
           <Route path='/login' element={<Login/>}></Route>
           <Route path='/signup' element={<Signup/>}></Route>
+          <Route path='*' element={<Notfound/>}></Route>
          </Routes>
       </BrowserRouter>
       

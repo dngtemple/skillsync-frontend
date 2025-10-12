@@ -17,8 +17,8 @@ export default function Signup() {
   }, []);
 
   return (
-    <div className="min-h-screen flex items-center justify-center ">
-      <div className="flex flex-col items-center bg-white rounded-3xl shadow-lg p-10 w-full max-w-[800px] mx-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-100 via-white to-blue-100 ">
+      <div className="flex flex-col items-center  p-10 w-full max-w-[800px] mx-4">
         
         {/* Animated Logo */}
         <div className="flex flex-col items-center mb-6">

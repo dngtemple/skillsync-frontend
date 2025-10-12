@@ -2,6 +2,7 @@ import { SignIn } from '@clerk/clerk-react'
 import { useRef, useEffect } from 'react'
 import logo from "/logo.png"
 import gsap from 'gsap'
+import {ClipLoader}  from "react-spinners"
 
 export default function Login() {
   const logoRef = useRef(null);
@@ -17,8 +18,8 @@ export default function Login() {
   }, []);
 
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="flex flex-col items-center bg-white rounded-3xl shadow-lg p-10 w-full max-w-[800px] mx-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-100 via-white to-blue-100">
+      <div className="flex flex-col items-center   p-10 w-full max-w-[800px] mx-4 ">
         
         {/* Animated Logo and Header */}
         <div className="flex flex-col items-center mb-6">

@@ -10,11 +10,13 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
+import { Button } from './components/ui/button'
+
 import { Bar, BarChart , CartesianGrid,XAxis,PolarGrid,Label,
   PolarRadiusAxis, Pie, PieChart,LabelList, RadialBar, RadialBarChart } from "recharts"
 
 import {  ChartContainer,ChartTooltip,ChartTooltipContent, } from "@/components/ui/chart"
-import { TrendingUp } from "lucide-react"
+import { ActivitySquare, CornerRightUpIcon, CornerUpRight, Goal, Group, Hourglass, Plus, TrendingUp } from "lucide-react"
 
 
 export default function Home() {
@@ -78,23 +80,52 @@ export default function Home() {
 
   return (
     <section className=' w-full flex flex-col gap-2 h-full'>
-    <Card className="bg-indigo-100 border border-indigo-300 shadow-lg rounded-2xl p-4">
+    <Card className="bg-indigo-100 border border-indigo-300 shadow-l rounded-2xl">
       <CardHeader>
         <CardTitle>
           <h1 className="text-2xl font-semibold text-indigo-400">
             Welcome Back, Clinton!
           </h1>
         </CardTitle>
-        <CardDescription className="text-indigo-600">
+        <CardDescription className="text-indigo-400 font-bold">
           Here’s a quick summary of your activity
         </CardDescription>
       </CardHeader>
+
+
+      <CardContent className={"flex gap-1"}>
+        <Button variant="outline" className="text-indigo-600 hover:bg-indigo-200">New Course <TrendingUp className="ml-2 h-4 w-4"/></Button>
+        <Button variant={"outline"} className="text-indigo-600 hover:bg-indigo-200">Invite Peer <Plus className="ml-2 h-4 w-4"/></Button>
+        <Button variant={"outline"} className="text-indigo-600 hover:bg-indigo-200">Join Group  <Group className="ml-2 h-4 w-4"/></Button>
+        <Button variant={"outline"} className="text-indigo-600 hover:bg-indigo-200">View Resources  <CornerUpRight className="ml-2 h-4 w-4"/></Button>
+      </CardContent>
+
     </Card>
+
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 ">
+        <Card className={"bg-indigo-100"}>
+          <CardHeader><CardTitle className={"font-bold text-indigo-400"}>Learning Hours</CardTitle></CardHeader>
+          <CardContent className={"flex items-center text-indigo-300 "}><span className="text-2xl font-bold">42 hrs</span> <Hourglass/></CardContent>
+        </Card>
+        <Card className={"bg-indigo-100"}>
+          <CardHeader><CardTitle className={"font-bold text-indigo-400"}>Active Courses</CardTitle></CardHeader>
+          <CardContent className={"flex items-center text-indigo-300 "}><span className="text-2xl font-bold">6</span> <CornerRightUpIcon/></CardContent>
+        </Card>
+        <Card className={"bg-indigo-100"}>
+          <CardHeader><CardTitle className={"font-bold text-indigo-400"}>Goals Achieved</CardTitle></CardHeader>
+          <CardContent className={"flex items-center text-indigo-300 "}><span className="text-2xl font-bold">42 hrs</span> <Goal/></CardContent>
+        </Card>
+        <Card className={"bg-indigo-100"}>
+          <CardHeader><CardTitle className={"font-bold text-indigo-400"}>Peers</CardTitle></CardHeader>
+          <CardContent className={"flex items-center text-indigo-300 "}><span className="text-2xl font-bold">42 hrs</span> <ActivitySquare/></CardContent>
+        </Card>
+        
+     </div>
 
 
     <div className='flex gap-2'>
 
-    <Card className="flex flex-col w-[60%] border-indigo-300 shadow-lg rounded-2xl ">
+    <Card className="flex flex-col w-[60%] border-indigo-300 bg-indigo-100 shadow-lg rounded-2xl ">
       <CardHeader className="items-center pb-0">
         <CardTitle>Active Courses</CardTitle>
       </CardHeader>
@@ -197,7 +228,10 @@ export default function Home() {
 
     </Card>
 
-    <Card className="w-[40%]  border-indigo-300 shadow-lg rounded-2xl p-4">
+
+    
+
+    <Card className="w-[40%]  border-indigo-300 bg-indigo-100 shadow-lg rounded-2xl p-4">
       <CardHeader><CardTitle>Recent Activity</CardTitle></CardHeader>
       <CardContent>
         <ChartContainer config={{
@@ -216,29 +250,8 @@ export default function Home() {
       </CardContent>
 
     </Card>
-
     
-
     </div>
-
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
-  <Card>
-    <CardHeader><CardTitle>Learning Hours</CardTitle></CardHeader>
-    <CardContent><p className="text-2xl font-bold">42 hrs</p></CardContent>
-  </Card>
-  <Card>
-    <CardHeader><CardTitle>Courses</CardTitle></CardHeader>
-    <CardContent><p className="text-2xl font-bold">6 Active</p></CardContent>
-  </Card>
-  <Card>
-    <CardHeader><CardTitle>Goals Achieved</CardTitle></CardHeader>
-    <CardContent><p className="text-2xl font-bold">3</p></CardContent>
-  </Card>
-  <Card>
-    <CardHeader><CardTitle>Peer Chats</CardTitle></CardHeader>
-    <CardContent><p className="text-2xl font-bold">12</p></CardContent>
-  </Card>
-</div>
 
     </section>
 

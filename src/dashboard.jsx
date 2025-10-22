@@ -1,12 +1,17 @@
 import React from 'react'
 import { UserButton } from '@clerk/clerk-react'
+import { Outlet } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 export default function Dashboard() {
+
+  const navigate = useNavigate();
+
   return (
     <div className="flex flex-col h-screen w-screen overflow-x-hidden">
       
       {/* Navbar */}
-      <div className="navbar bg-indigo-300 min-h-12 shadow-sm px-3">
+      <div className="navbar bg-indigo-200 min-h-12 shadow-sm px-3">
         <div className="flex-1 flex items-center">
           <img src="/logo.png" alt="SkillSync Logo" className="w-9 h-9 rounded-full ml-1"/>
         </div>
@@ -28,7 +33,8 @@ export default function Dashboard() {
           
           {/* Main content */}
           <div className="drawer-content flex-1 bg-base-100 overflow-auto p-2">
-            <div className="skeleton h-32 bg-indigo-200 w-full"></div>
+            {/* <div className="skeleton h-32 bg-indigo-200 w-full"></div> */}
+             <Outlet/>
           </div>
 
           {/* Sidebar */}
@@ -40,16 +46,18 @@ export default function Dashboard() {
               
               <ul className="menu w-full grow">
                 <li>
-                  <button className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Homepage">
+                  <button className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Home">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" strokeLinejoin="round" strokeLinecap="round" strokeWidth="2" fill="none" stroke="currentColor" className="inline-block size-6 my-1.5">
                       <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
                       <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                     </svg>
-                    <span className="is-drawer-close:hidden">Homepage</span>
+                    <span className="is-drawer-close:hidden">Home</span>
                   </button>
                 </li>
                <li>
-                  <button className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Courses">
+                  <button onClick={()=>{
+                    navigate('/courses')
+                  }} className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Courses">
                     <svg xmlns="http://www.w3.org/2000/svg" className="size-6 my-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 19.5A2.5 2.5 0 016.5 17H20m0 0V6a2 2 0 00-2-2H6a2 2 0 00-2 2v11m16 0l-3 3m0 0l-3-3m3 3V10" />
                     </svg>

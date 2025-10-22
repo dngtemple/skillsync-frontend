@@ -1,7 +1,16 @@
 import React from 'react'
 import { UserButton } from '@clerk/clerk-react'
 import { Outlet } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate,Link } from 'react-router-dom'
+
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb"
 
 export default function Dashboard() {
 
@@ -11,9 +20,28 @@ export default function Dashboard() {
     <div className="flex flex-col h-screen w-screen overflow-x-hidden">
       
       {/* Navbar */}
-      <div className="navbar bg-indigo-200 min-h-12 shadow-sm px-3">
-        <div className="flex-1 flex items-center">
+      <div className="navbar bg-indigo-100 min-h-12 shadow-sm px-3">
+        <div className="flex-1 flex gap-4 items-center">
           <img src="/logo.png" alt="SkillSync Logo" className="w-9 h-9 rounded-full ml-1"/>
+                <Breadcrumb>
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link href="/">Home</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link href="/components">Components</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
         </div>
         <div className="flex gap-3 items-center">
           <input

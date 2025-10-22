@@ -10,7 +10,8 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
-import { Bar, BarChart , CartesianGrid,XAxis,Label, Pie, PieChart,LabelList, RadialBar, RadialBarChart } from "recharts"
+import { Bar, BarChart , CartesianGrid,XAxis,PolarGrid,Label,
+  PolarRadiusAxis, Pie, PieChart,LabelList, RadialBar, RadialBarChart } from "recharts"
 
 import {  ChartContainer,ChartTooltip,ChartTooltipContent, } from "@/components/ui/chart"
 import { TrendingUp } from "lucide-react"
@@ -61,6 +62,19 @@ export default function Home() {
   },
 }
 
+  const VisitData = [
+  { browser: "safari", visitors: 200, fill: "var(--color-safari)" },
+]
+
+ const VisitConfig = {
+  visitors: {
+    label: "Visitors",
+  },
+  safari: {
+    label: "Safari",
+    color: "var(--chart-2)",
+  },
+}
 
   return (
     <section className=' w-full flex flex-col gap-2 h-full'>
@@ -80,10 +94,9 @@ export default function Home() {
 
     <div className='flex gap-2'>
 
-    <Card className="flex flex-col w-[50%] border-indigo-300 shadow-lg rounded-2xl ">
+    <Card className="flex flex-col w-[60%] border-indigo-300 shadow-lg rounded-2xl ">
       <CardHeader className="items-center pb-0">
         <CardTitle>Active Courses</CardTitle>
-        <CardDescription>January - June 2024</CardDescription>
       </CardHeader>
       <CardContent className="flex-1 flex pb-0">
         <ChartContainer
@@ -128,11 +141,63 @@ export default function Home() {
             </RadialBar>
           </RadialBarChart>
         </ChartContainer>
+        <ChartContainer
+          config={VisitConfig}
+          className="mx-auto aspect-square max-h-[250px]"
+        >
+          <RadialBarChart
+            data={VisitData}
+            startAngle={0}
+            endAngle={250}
+            innerRadius={80}
+            outerRadius={110}
+          >
+            <PolarGrid
+              gridType="circle"
+              radialLines={false}
+              stroke="none"
+              className="first:fill-muted last:fill-background"
+              polarRadius={[86, 74]}
+            />
+            <RadialBar dataKey="visitors" background cornerRadius={10} />
+            <PolarRadiusAxis tick={false} tickLine={false} axisLine={false}>
+              <Label
+                content={({ viewBox }) => {
+                  if (viewBox && "cx" in viewBox && "cy" in viewBox) {
+                    return (
+                      <text
+                        x={viewBox.cx}
+                        y={viewBox.cy}
+                        textAnchor="middle"
+                        dominantBaseline="middle"
+                      >
+                        <tspan
+                          x={viewBox.cx}
+                          y={viewBox.cy}
+                          className="fill-foreground text-4xl font-bold"
+                        >
+                          {chartData[0].visitors.toLocaleString()}
+                        </tspan>
+                        <tspan
+                          x={viewBox.cx}
+                          y={(viewBox.cy || 0) + 24}
+                          className="fill-muted-foreground"
+                        >
+                          Visitors
+                        </tspan>
+                      </text>
+                    )
+                  }
+                }}
+              />
+            </PolarRadiusAxis>
+          </RadialBarChart>
+        </ChartContainer>
       </CardContent>
 
     </Card>
 
-    <Card className="w-[50%]  border-indigo-300 shadow-lg rounded-2xl p-4">
+    <Card className="w-[40%]  border-indigo-300 shadow-lg rounded-2xl p-4">
       <CardHeader><CardTitle>Recent Activity</CardTitle></CardHeader>
       <CardContent>
         <ChartContainer config={{
@@ -152,7 +217,29 @@ export default function Home() {
 
     </Card>
 
+    
+
     </div>
+
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+  <Card>
+    <CardHeader><CardTitle>Learning Hours</CardTitle></CardHeader>
+    <CardContent><p className="text-2xl font-bold">42 hrs</p></CardContent>
+  </Card>
+  <Card>
+    <CardHeader><CardTitle>Courses</CardTitle></CardHeader>
+    <CardContent><p className="text-2xl font-bold">6 Active</p></CardContent>
+  </Card>
+  <Card>
+    <CardHeader><CardTitle>Goals Achieved</CardTitle></CardHeader>
+    <CardContent><p className="text-2xl font-bold">3</p></CardContent>
+  </Card>
+  <Card>
+    <CardHeader><CardTitle>Peer Chats</CardTitle></CardHeader>
+    <CardContent><p className="text-2xl font-bold">12</p></CardContent>
+  </Card>
+</div>
+
     </section>
 
   )

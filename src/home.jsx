@@ -16,7 +16,7 @@ import { Bar, BarChart , CartesianGrid,XAxis,PolarGrid,Label,
   PolarRadiusAxis, Pie, PieChart,LabelList, RadialBar, RadialBarChart } from "recharts"
 
 import {  ChartContainer,ChartTooltip,ChartTooltipContent, } from "@/components/ui/chart"
-import { ActivitySquare, CornerRightUpIcon, CornerUpRight, Goal, Group, Hourglass, Plus, TrendingUp } from "lucide-react"
+import { ActivitySquare, CornerRightUpIcon, CornerUpRight, Gamepad2, Goal, Group, Hourglass, Plus, TrendingUp } from "lucide-react"
 
 
 export default function Home() {
@@ -87,23 +87,28 @@ export default function Home() {
             Welcome Back, Clinton!
           </h1>
         </CardTitle>
+
+        <div className='flex gap-6 items-center'>
         <CardDescription className="text-indigo-400 font-bold">
           Here’s a quick summary of your activity
         </CardDescription>
-      </CardHeader>
-
-
-      <CardContent className={"flex gap-1"}>
+        <CardContent className={"flex gap-1"}>
         <Button variant="outline" className="text-indigo-600 hover:bg-indigo-200">New Course <TrendingUp className="ml-2 h-4 w-4"/></Button>
         <Button variant={"outline"} className="text-indigo-600 hover:bg-indigo-200">Invite Peer <Plus className="ml-2 h-4 w-4"/></Button>
         <Button variant={"outline"} className="text-indigo-600 hover:bg-indigo-200">Join Group  <Group className="ml-2 h-4 w-4"/></Button>
         <Button variant={"outline"} className="text-indigo-600 hover:bg-indigo-200">View Resources  <CornerUpRight className="ml-2 h-4 w-4"/></Button>
+        <Button variant={"outline"} className="text-indigo-600 hover:bg-indigo-200">New Goal  <Gamepad2 className="ml-2 h-4 w-4"/></Button>
       </CardContent>
+      </div>
+      </CardHeader>
+
+
+      
 
     </Card>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 ">
-        <Card className={"bg-indigo-100"}>
+        <Card className={"bg-indigo-100" }>
           <CardHeader><CardTitle className={"font-bold text-indigo-400"}>Learning Hours</CardTitle></CardHeader>
           <CardContent className={"flex items-center text-indigo-300 "}><span className="text-2xl font-bold">42 hrs</span> <Hourglass/></CardContent>
         </Card>

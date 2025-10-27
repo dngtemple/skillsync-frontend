@@ -20,7 +20,7 @@ export default function Dashboard() {
     <div className="flex flex-col h-screen w-screen overflow-x-hidden">
       
       {/* Navbar */}
-      <div className="navbar bg-indigo-200 min-h-12 shadow-sm px-3">
+      <div className="navbar bg-gradient-to-br from-indigo-300 via-blue-200 to-blue-100 min-h-12 shadow-sm px-3">
         <div className="flex-1 flex gap-4 items-center">
           <img src="/logo.png" alt="SkillSync Logo" className="w-9 h-9 rounded-full ml-1"/>
                 <Breadcrumb>

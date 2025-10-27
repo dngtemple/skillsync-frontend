@@ -108,19 +108,19 @@ export default function Home() {
     </Card>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 ">
-        <Card className={"bg-indigo-100" }>
+        <Card className={"border-indigo-300" }>
           <CardHeader><CardTitle className={"font-bold text-indigo-400"}>Learning Hours</CardTitle></CardHeader>
           <CardContent className={"flex items-center text-indigo-300 "}><span className="text-2xl font-bold">42 hrs</span> <Hourglass/></CardContent>
         </Card>
-        <Card className={"bg-indigo-100"}>
+        <Card className={"border-indigo-300"}>
           <CardHeader><CardTitle className={"font-bold text-indigo-400"}>Active Courses</CardTitle></CardHeader>
           <CardContent className={"flex items-center text-indigo-300 "}><span className="text-2xl font-bold">6</span> <CornerRightUpIcon/></CardContent>
         </Card>
-        <Card className={"bg-indigo-100"}>
+        <Card className={"border-indigo-300"}>
           <CardHeader><CardTitle className={"font-bold text-indigo-400"}>Goals Achieved</CardTitle></CardHeader>
           <CardContent className={"flex items-center text-indigo-300 "}><span className="text-2xl font-bold">42 hrs</span> <Goal/></CardContent>
         </Card>
-        <Card className={"bg-indigo-100"}>
+        <Card className={"border-indigo-300"}>
           <CardHeader><CardTitle className={"font-bold text-indigo-400"}>Peers</CardTitle></CardHeader>
           <CardContent className={"flex items-center text-indigo-300 "}><span className="text-2xl font-bold">42 hrs</span> <ActivitySquare/></CardContent>
         </Card>
@@ -130,7 +130,7 @@ export default function Home() {
 
     <div className='flex gap-2'>
 
-    <Card className="flex flex-col w-[60%] border-indigo-300 bg-indigo-100 shadow-lg rounded-2xl ">
+    <Card className="flex flex-col w-[60%] border-indigo-300  shadow-lg rounded-2xl ">
       <CardHeader className="items-center pb-0">
         <CardTitle>Active Courses</CardTitle>
       </CardHeader>
@@ -236,7 +236,7 @@ export default function Home() {
 
     
 
-    <Card className="w-[40%]  border-indigo-300 bg-indigo-100 shadow-lg rounded-2xl p-4">
+    <Card className="w-[40%]  border-indigo-300  shadow-lg rounded-2xl p-4">
       <CardHeader><CardTitle>Recent Activity</CardTitle></CardHeader>
       <CardContent>
         <ChartContainer config={{

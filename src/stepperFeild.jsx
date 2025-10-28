@@ -214,36 +214,42 @@ export default function SkillSyncStepper() {
             </h3>
 
             <div>
-  <div class="px-4 sm:px-0">
-  </div>
-  <div class="mt-6 border-t border-base-content/25">
-    <dl class="divide-y divide-base-content/25">
-      <div class="px-2 py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0 text-base">
-        <dt class="font-medium text-base-content">Full Name</dt>
-        <dd class="mt-1  text-base-content/80 sm:col-span-2 sm:mt-0">{formData.fullName}</dd>
-      </div>
-      <div class="px-2 py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0 text-base">
-        <dt class="font-medium text-base-content">Username</dt>
-        <dd class="mt-1  text-base-content/80 sm:col-span-2 sm:mt-0">{formData.username}</dd>
-      </div>
-      <div class="px-2 py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0 text-base">
-        <dt class="font-medium text-base-content">Goals</dt>
-        <dd class="mt-1 py-1 px-1 text-base-content/80 sm:col-span-2 sm:mt-0 whitespace-pre-wrap break-words max-h-40 overflow-y-auto  ">{formData.goals}</dd>
-      </div>
-      <div class="px-2 py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0 text-base">
-        <dt class="font-medium text-base-content">Courses</dt>
-        <dd class="mt-1  text-base-content/80 sm:col-span-2 sm:mt-0">{formData.courses.join(" , ")}</dd>
-      </div>
-      <div class="px-2 py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0 text-base">
-        <dt class="font-medium text-base-content">Peference</dt>
-        <dd class="mt-1  text-base-content/80 sm:col-span-2 sm:mt-0">{formData.preferences}</dd>
-      </div>
-      
-    </dl>
-  </div>
-</div>
-
-
+              <div class="px-4 sm:px-0"></div>
+              <div class="mt-6 border-t border-base-content/25">
+                <dl class="divide-y divide-base-content/25">
+                  <div class="px-2 py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0 text-base">
+                    <dt class="font-medium text-base-content">Full Name</dt>
+                    <dd class="mt-1  text-base-content/80 sm:col-span-2 sm:mt-0">
+                      {formData.fullName}
+                    </dd>
+                  </div>
+                  <div class="px-2 py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0 text-base">
+                    <dt class="font-medium text-base-content">Username</dt>
+                    <dd class="mt-1  text-base-content/80 sm:col-span-2 sm:mt-0">
+                      {formData.username}
+                    </dd>
+                  </div>
+                  <div class="px-2 py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0 text-base">
+                    <dt class="font-medium text-base-content">Goals</dt>
+                    <dd class="mt-1 py-1 px-1 text-base-content/80 sm:col-span-2 sm:mt-0 whitespace-pre-wrap break-words max-h-40 overflow-y-auto  ">
+                      {formData.goals}
+                    </dd>
+                  </div>
+                  <div class="px-2 py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0 text-base">
+                    <dt class="font-medium text-base-content">Courses</dt>
+                    <dd class="mt-1  text-base-content/80 sm:col-span-2 sm:mt-0">
+                      {formData.courses.join(" , ")}
+                    </dd>
+                  </div>
+                  <div class="px-2 py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0 text-base">
+                    <dt class="font-medium text-base-content">Peference</dt>
+                    <dd class="mt-1  text-base-content/80 sm:col-span-2 sm:mt-0">
+                      {formData.preferences}
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
           </div>
         )}
 

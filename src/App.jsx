@@ -9,6 +9,7 @@ import Courses from "./courses";
 import Home from "./home";
 import Peers from "./peers";
 import Messages from "./messages";
+import Groups from "./groups";
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
               {" "}
             </Route>
             <Route path="/messages" element={<Messages />}>
+              {" "}
+            </Route>
+            <Route path="/groups" element={<Groups />}>
               {" "}
             </Route>
             {/* <Route path='/courses' element={<Courses/>}> </Route> */}

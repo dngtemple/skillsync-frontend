@@ -11,6 +11,8 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { IconNotification, IconProgress } from "@tabler/icons-react";
+import { CornerDownLeft, Group, HomeIcon, MessageCircle, PersonStanding } from "lucide-react";
 
 export default function Dashboard() {
   const navigate = useNavigate();
@@ -79,23 +81,13 @@ export default function Dashboard() {
             <div className="is-drawer-close:w-14 is-drawer-open:w-64 bg-gradient-to-br from-indigo-300 via-blue-200 to-blue-100 flex flex-col items-start min-h-full">
               <ul className="menu w-full grow">
                 <li>
-                  <button
+                  <button onClick={()=>{
+                    navigate("/home")
+                  }}
                     className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
                     data-tip="Home"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      strokeLinejoin="round"
-                      strokeLinecap="round"
-                      strokeWidth="2"
-                      fill="none"
-                      stroke="currentColor"
-                      className="inline-block size-6 my-1.5"
-                    >
-                      <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
-                      <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                    </svg>
+                    <HomeIcon></HomeIcon>
                     <span className="is-drawer-close:hidden">Home</span>
                   </button>
                 </li>
@@ -107,20 +99,7 @@ export default function Dashboard() {
                     className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
                     data-tip="Courses"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="size-6 my-1.5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M4 19.5A2.5 2.5 0 016.5 17H20m0 0V6a2 2 0 00-2-2H6a2 2 0 00-2 2v11m16 0l-3 3m0 0l-3-3m3 3V10"
-                      />
-                    </svg>
+                    <CornerDownLeft></CornerDownLeft>
                     <span className="is-drawer-close:hidden">Courses</span>
                   </button>
                 </li>
@@ -131,42 +110,30 @@ export default function Dashboard() {
                     className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
                     data-tip="Peers"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="size-6 my-1.5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M17 20h5v-2a4 4 0 00-5-4m-5 6H2v-2a4 4 0 014-4m9-4a4 4 0 11-8 0 4 4 0 018 0zm5 4a4 4 0 10-8 0 4 4 0 008 0z"
-                      />
-                    </svg>
+                    <PersonStanding></PersonStanding>
                     <span className="is-drawer-close:hidden">Peers</span>
                   </button>
                 </li>
                 <li>
-                  <button
+                  <button onClick={()=>{
+                    navigate("/groups")
+                  }}
+                    className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
+                    data-tip="Groups"
+                  >
+                    <Group></Group>
+                    <span className="is-drawer-close:hidden">Groups</span>
+                  </button>
+
+                </li>
+                <li>
+                  <button onClick={()=>{
+                    navigate("/messages")
+                  }}
                     className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
                     data-tip="Messages"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="size-6 my-1.5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.97 9.97 0 01-4.9-1.267L3 20l1.267-4.9A9.97 9.97 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                      />
-                    </svg>
+                    <MessageCircle></MessageCircle>
                     <span className="is-drawer-close:hidden">Messages</span>
                   </button>
                 </li>
@@ -175,21 +142,17 @@ export default function Dashboard() {
                     className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
                     data-tip="Progress"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="size-6 my-1.5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M12 20V10m6 10V4m-12 16v-6"
-                      />
-                    </svg>
+                    <IconProgress></IconProgress>
                     <span className="is-drawer-close:hidden">Progress</span>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
+                    data-tip="notifications"
+                  >
+                    <IconNotification></IconNotification>
+                    <span className="is-drawer-close:hidden">Notifications</span>
                   </button>
                 </li>
                 {/* More list items here... */}
